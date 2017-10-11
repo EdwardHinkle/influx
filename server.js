@@ -4,11 +4,12 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var session = require("express-session");
 var routes_1 = require("./routes");
+var config = require('./config.json');
 var app = express();
 app.set("view engine", "pug");
 app.set("views", __dirname);
-app.listen(9010, function () {
-    console.log("Abode API running on 9010");
+app.listen(config.PORT, function () {
+    console.log("Abode API running on " + config.PORT);
 });
 var sess = {
     secret: 'keyboard cat',

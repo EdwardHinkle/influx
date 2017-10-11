@@ -8,13 +8,15 @@ import * as session from 'express-session';
 
 import { router } from './routes';
 
+let config = require('./config.json');
+
 const app = express();
 
 app.set("view engine", "pug");
 app.set("views", __dirname);
 
-app.listen(9010, function() {
-    console.log("Abode API running on 9010");
+app.listen(config.PORT, function() {
+    console.log("Abode API running on " + config.PORT);
 });
 
 const sess: any = {
